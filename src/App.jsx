@@ -214,7 +214,7 @@ function SettingsPage({ accounts, setAccounts, onToast }) {
   const provider=cfg.ai_provider||"openrouter";const pInfo=AI_PROVIDERS[provider];
   const connectInstagram=()=>{
     const appId=cfg.meta_app_id||META_APP_ID;
-    const redirectUri=encodeURIComponent(window.location.origin);
+    const redirectUri=encodeURIComponent("https://socialhub-fullstek.vercel.app");
     const scope="instagram_basic,instagram_content_publish,pages_read_engagement,business_management,pages_show_list";
     window.location.href="https://www.facebook.com/dialog/oauth?client_id="+appId+"&redirect_uri="+redirectUri+"&scope="+scope+"&response_type=token&auth_type=rerequest";
   };
