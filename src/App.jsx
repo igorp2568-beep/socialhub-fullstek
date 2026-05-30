@@ -226,7 +226,13 @@ function SettingsPage({ accounts, setAccounts, onToast }) {
         <div style={{...neu.flat,padding:28}}>
           <h3 style={{fontSize:17,fontWeight:700,color:C.onSurface,margin:"0 0 8px"}}>Conectar Instagram</h3>
           <p style={{fontSize:13,color:C.muted,margin:"0 0 20px",lineHeight:1.6}}>Clique abaixo para entrar com sua conta do Facebook. Suas contas Instagram Business serao detectadas automaticamente.</p>
-          <button onClick={connectInstagram} style={{...neu.primary,padding:"14px 28px",fontSize:15,display:"flex",alignItems:"center",justifyContent:"center",gap:10,width:"100%"}}>
+          <button onClick={() => {
+            const clientId = "26643189218612460";
+            const redirectUri = "https://api.fullstek.space/auth/instagram/callback";
+            const scope = "instagram_business_content_publish,instagram_business_manage_messages";
+            const authUrl = `https://www.facebook.com/v20.0/dialog/oauth?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;
+            window.location.href = authUrl;
+          }} style={{...neu.primary,padding:"14px 28px",fontSize:15,display:"flex",alignItems:"center",justifyContent:"center",gap:10,width:"100%"}}>
             <span style={{fontSize:18,fontWeight:900}}>f</span>Conectar Instagram
           </button>
           <p style={{fontSize:11,color:C.muted,margin:"10px 0 0",textAlign:"center"}}>Necessita de conta Instagram Business ou Creator vinculada ao Facebook.</p>
