@@ -229,7 +229,7 @@ function SettingsPage({ accounts, setAccounts, onToast }) {
           <button onClick={() => {
             const clientId = "26643189218612460";
             const redirectUri = "https://api.fullstek.space/auth/instagram/callback";
-            const scope = "instagram_business_content_publish,instagram_business_manage_messages";
+            const scope = "pages_show_list,instagram_basic,instagram_content_publish,pages_read_engagement";
             const authUrl = `https://www.facebook.com/v20.0/dialog/oauth?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=code`;
             window.location.href = authUrl;
           }} style={{...neu.primary,padding:"14px 28px",fontSize:15,display:"flex",alignItems:"center",justifyContent:"center",gap:10,width:"100%"}}>
